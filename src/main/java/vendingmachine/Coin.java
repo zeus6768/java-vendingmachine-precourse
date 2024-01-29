@@ -1,5 +1,9 @@
 package vendingmachine;
 
+import java.util.Arrays;
+
+import camp.nextstep.edu.missionutils.Randoms;
+
 public enum Coin {
     COIN_500(500),
     COIN_100(100),
@@ -12,5 +16,18 @@ public enum Coin {
         this.amount = amount;
     }
 
-    // 추가 기능 구현
+    public int getAmount() {
+        return amount;
+    }
+
+    public static Coin pickRandomCoin() {
+        int index = Randoms.pickNumberInRange(0, values().length - 1);
+        return Coin.values()[index];
+    }
+
+    public static int minAmount() {
+        return Arrays.stream(Coin.values()).min((coin1, coin2) -> Math.min(coin1.getAmount(), coin2.getAmount()))
+                .orElseThrow(IllegalArgumentException::new)
+                .getAmount();
+    }
 }
