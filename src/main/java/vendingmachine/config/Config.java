@@ -3,12 +3,14 @@ package vendingmachine.config;
 import vendingmachine.controller.Controller;
 import vendingmachine.service.Service;
 import vendingmachine.view.InputView;
+import vendingmachine.view.OutputView;
 
 public class Config {
 
     private static Config config;
 
     private InputView inputView;
+    private OutputView outputView;
     private Controller controller;
     private Service service;
 
@@ -28,10 +30,18 @@ public class Config {
         return inputView;
     }
 
+    public OutputView outputView() {
+        if (outputView == null) {
+            outputView = new OutputView();
+        }
+        return outputView;
+    }
+
     public Controller controller() {
         if (controller == null) {
             controller = new Controller(
                     inputView(),
+                    outputView(),
                     service()
             );
         }
