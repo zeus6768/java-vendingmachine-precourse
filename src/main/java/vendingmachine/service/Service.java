@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import vendingmachine.Coin;
+import vendingmachine.model.Coin;
 
 public class Service {
 

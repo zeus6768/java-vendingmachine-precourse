@@ -2,7 +2,9 @@ package vendingmachine.controller;
 
 import java.util.Map;
 
-import vendingmachine.Coin;
+import vendingmachine.model.Coin;
+import vendingmachine.model.Product;
+import vendingmachine.model.VendingMachine;
 import vendingmachine.service.Service;
 import vendingmachine.view.InputView;
 import vendingmachine.view.OutputView;
@@ -23,5 +25,7 @@ public class Controller {
         int balance = inputView.askBalance();
         Map<Coin, Integer> coins = service.createRandomCoins(balance);
         outputView.printCoins(coins);
+        Map<Product, Integer> products = inputView.askProducts();
+        VendingMachine vendingMachine = new VendingMachine(coins, products);
     }
 }

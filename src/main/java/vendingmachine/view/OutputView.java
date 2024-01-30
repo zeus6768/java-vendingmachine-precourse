@@ -2,7 +2,7 @@ package vendingmachine.view;
 
 import java.util.Map;
 
-import vendingmachine.Coin;
+import vendingmachine.model.Coin;
 
 public class OutputView {
 
@@ -12,5 +12,6 @@ public class OutputView {
             int count = coins.get(coin);
             System.out.printf("%d원 - %d개%n", coin.getAmount(), count);
         }
+        System.out.println();
     }
 }
