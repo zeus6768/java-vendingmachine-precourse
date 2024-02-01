@@ -27,5 +27,6 @@ public class Controller {
         outputView.printCoins(coins);
         Map<Product, Integer> products = inputView.askProducts();
         VendingMachine vendingMachine = new VendingMachine(coins, products);
+        int inputAmount = inputView.askInputAmount();
     }
 }

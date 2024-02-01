@@ -24,6 +24,11 @@ public class InputView {
         return validateProducts(productDescription);
     }
 
+    public int askInputAmount() {
+        System.out.println("투입 금액을 입력해 주세요.");
+        return Integer.parseInt(Console.readLine());
+    }
+
     private Map<Product, Integer> validateProducts(String productDescription) {
         Map<Product, Integer> products = new HashMap<>();
         String[] productDetailsSplit = productDescription.split(";");
